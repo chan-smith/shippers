@@ -1,0 +1,33 @@
+﻿@model IEnumerable<shippers.Models.Shippers>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a class="btn btn-info" href="~/Shippers/Insert">新增供應商資料</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>供應商編號</th>
+            <th>供應商名稱</th>
+            <th>供應商電話</th>
+            <th>修改</th>
+            <th>刪除</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td>@items.ShipperID</td>
+                <td>@items.CompanyName</td>
+                <td>@items.Phone</td>
+                <td><a class="btn btn-primary" href="~/Shippers/Update/@items.ShipperID">修改</a></td>
+                <td><a class="btn btn-primary" href="~/Shippers/Delete/@items.ShipperID">刪除</a></td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

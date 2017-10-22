@@ -1,0 +1,15 @@
+﻿@model shippers.Models.Shippers
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+<form method="post" action="~/Shippers/Update">
+    <label>供應商名稱</label>
+    <input type="hidden" name="ShipperID" value="@Model.ShipperID" />
+    <input type="text" name="CompanyName" value="@Model.CompanyName" />
+    <label>供應商電話</label>
+    <input type="text" name="Phone" value="@Model.Phone" />
+    <button type="submit" class="btn btn-success">修改</button>
+</form>
